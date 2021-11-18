@@ -5,11 +5,11 @@ from scrap import scrapweb
 
 app = Flask(__name__)
 
-@app.route("/espace_client", methods=["GET"])
+@app.route("/", methods=["GET"])
 def home():
 	return render_template('index.html')
 
-@app.route("/", methods=["POST"])
+@app.route("/scrapp_web", methods=["POST"])
 def extract():
 	# Get link page
 	link = request.form['link']

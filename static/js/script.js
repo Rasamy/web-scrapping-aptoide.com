@@ -17,7 +17,7 @@ jQuery(document).ready(function($) {
 			site_url = $(' #site_url').val();
 			$.ajax({
 				method: "POST",
-				url:"/",
+				url:"/scrapp_web",
 				dataType:'text',
 				contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
 				data:{ link : link}
