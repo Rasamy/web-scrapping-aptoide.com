@@ -1,5 +1,5 @@
 requests
 types-requests
 Flask
-beautifulsoup4
+bs4
 typing
