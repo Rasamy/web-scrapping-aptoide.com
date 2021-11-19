@@ -1,7 +1,8 @@
 from flask import Flask, render_template,request,jsonify
-from scrap import scrapweb
+import scrapweb
 
 app = Flask(__name__)
+
 
 @app.route("/", methods=["GET"])
 def home():
@@ -13,7 +14,10 @@ def extract():
 	link = request.form['link']
 	if "en.aptoide.com" not in link:
 		return jsonify([])
-	info_extracted = scrapweb.getApplicationInfo(link)
+
+	# instanciate object Scrapweb
+	scrap_web = scrapweb.Scrapweb(link)
+	info_extracted = scrap_web.getApplicationInfo()
 	#return data au format json
 	return jsonify(info_extracted)
 
