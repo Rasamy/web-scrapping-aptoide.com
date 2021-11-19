@@ -1,4 +1,5 @@
 requests
+types-requests
 Flask
 beautifulsoup4
 typing

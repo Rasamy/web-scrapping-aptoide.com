@@ -1,12 +1,15 @@
-from bs4 import BeautifulSoup
+import requests
 from typing import Dict, Any
+from bs4 import BeautifulSoup
 
 def check(elt: Any)->str:
 	if len(elt)>0:
 		return elt.get_text()
 	return ""
 
-def getApplicationInfo(page:Any)->Dict[str,str]:
+def getApplicationInfo(link:str)->Dict[str,str]:
+	# Get page content
+	page = requests.get(link,timeout=10)
 	# Parsing page
 	soup = BeautifulSoup(page.content, 'html.parser')
 	# ---------------- Initialisation des variables ----------------------------------

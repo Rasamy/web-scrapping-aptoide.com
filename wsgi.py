@@ -1,4 +1,3 @@
-import requests
 from flask import Flask, render_template,request,jsonify
 from scrap import scrapweb
 
@@ -14,10 +13,7 @@ def extract():
 	link = request.form['link']
 	if "en.aptoide.com" not in link:
 		return jsonify([])
-
-	# Get page content
-	page_html = requests.get(link,timeout=10)
-	info_extracted = scrapweb.getApplicationInfo(page_html)
+	info_extracted = scrapweb.getApplicationInfo(link)
 	#return data au format json
 	return jsonify(info_extracted)
 
