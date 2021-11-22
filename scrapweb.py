@@ -2,7 +2,7 @@ import requests
 from typing import Dict, Any
 from bs4 import BeautifulSoup
 
-class Scrapweb(object):
+class Scrapweb():
 	"""Object scrapweb
 	Get mobile application info
 	"""
