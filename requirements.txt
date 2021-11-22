@@ -1,5 +1,7 @@
 requests
 types-requests
 Flask
-bs4
+beautifulsoup4
 typing
+lxml
+Werkzeug
